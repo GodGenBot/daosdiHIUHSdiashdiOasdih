@@ -4,7 +4,7 @@
   "description": "GodGen official discord bot",
   "main": "index.js",
   "scripts": {
-    "test": "Just a test"
+    "start": "node index"
   },
   "author": "wrymex",
   "license": "ISC",
