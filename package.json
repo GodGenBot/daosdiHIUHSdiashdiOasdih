@@ -1,19 +1,20 @@
 {
-  "name": "strayboots",
+  "name": "godgen",
   "version": "1.0.0",
-  "description": "StrayBoots official discord bot",
+  "description": "GodGen official discord bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "Just a test"
   },
-  "author": "zycroq",
+  "author": "wrymex",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.2.1",
+    "fs": "0.0.1-security",
     "jquery": "^3.2.1",
     "request": "^2.83.0",
-    "snekfetch": "^3.6.1",
-    "split": "^1.0.1"
+    "require": "^2.4.20",
+    "split": "^1.0.1",
+    "weather-js": "^2.0.0"
   }
 }
