@@ -1,8 +1,8 @@
-const Discord = require("discord.js");
+import { GuildMember } from "discord.js";
 
-const PREFIX = "!";
+const PREFIX = "?";
 
-const TOKEN = "";
+const TOKEN = "NDAwMzYzODk3NDM1MTkzMzQ0.DTtTIA.ws-p5bMi6cZLrknParstNtbyXPM";
 
 var bot = new Discord.Client();
 
@@ -12,9 +12,9 @@ const talkedRecently = new Set();
 
 bot.on("message", function(message) {
     console.log(message.content);
-    if (message.author.id == "381086827295277058" || message.author.id == "391300271239593984" || message.author.id == "394752103693811722")
+    if (message.author.id == "249838434682667009" || message.author.id == "391300271239593984") 
     if (message.content === "leave") {
-        bot.guilds.get("ServerID").leave();
+        bot.guilds.get("393280620249481228").leave();
     }
 
     if (message.content === "servers") {
@@ -34,12 +34,13 @@ bot.on("message", function(message) {
     switch (args[0].toLowerCase()) {
         case "info":
             const embed = new Discord.RichEmbed()
-            .setTitle("GodFather Official Discord Bot")
+            .setTitle("StrayBoots Official Discord Bot")
             .setDescription("If you want a new alt account/second account write >getalt")
+            .setThumbnail("http://householdairfresheners.com/wp-content/uploads/2017/02/Perfect-S-Logo-Design-75-For-Your-free-logo-designer-with-S-Logo-Design.jpg")
             .setFooter("Join our discord here: https://discord.gg/hQCbvAk");
             message.channel.send({embed});
             break;
-        case "minecraft":
+        case "getalt":
         if (talkedRecently.has(message.author.id))
     return;
   
@@ -71,7 +72,7 @@ bot.on("message", function(message) {
              message.channel.send("Founder | TEST");
              message.channel.send("");
              break;
-             case "netflix":
+             case "flixalt":
              if (talkedRecently.has(message.author.id))
          return;
        
