@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+import { GuildMember } from "discord.js";
 
 const PREFIX = "?";
 
@@ -22,7 +22,11 @@ bot.on("message", function(message) {
     }
 });
 
-bot.login(TOKEN);
+bot.on("message", function(message) {
+    console.log(message.content);
+});
+
+bot.login(process.env.BOT_TOKEN);
 
 bot.on("message", function(message) {
     if (message.author.equals(bot.user)) return;
