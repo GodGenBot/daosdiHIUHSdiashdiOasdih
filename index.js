@@ -1,25 +1,17 @@
 import { GuildMember } from "discord.js";
 
+const Discord = require("discord.js");
+
 const PREFIX = "!";
 
-const TOKEN = "NDAzMjEzNDU3Njc3MzUyOTc2.DUEBTw.jcnGxnKJIinTNypz-mQi3c0SnMc";
+const TOKEN = "NDAzMjEzNDU3Njc3MzUyOTc2.DUEDLw.HWCnu6xqUZXFISvfP4YLuflv3fI";
 
 var bot = new Discord.Client();
-
-const list = bot.guilds.map(g => `Name: ${g.name} | ID: ${g.id}`).join(`\n`);
 
 const talkedRecently = new Set();
 
 bot.on("message", function(message) {
     console.log(message.content);
-    if (message.author.id == "249838434682667009" || message.author.id == "391300271239593984") 
-    if (message.content === "leave") {
-        bot.guilds.get("393280620249481228").leave();
-    }
-
-    if (message.content === "servers") {
-        message.channel.send(list);
-    }
 });
 
 bot.login(process.env.BOT_TOKEN);
@@ -59,16 +51,22 @@ bot.on("message", function(message) {
              var arr = a.toString().split("\n");
              var splitted = arr[Math.floor(Math.random() * arr.length)];
             }
-            message.author.send(splitted);
-            message.author.send("If you believe your account is not working, send a message to Wrymex.");
-            message.channel.send(message.author + ", you have now received an NFA user! \ Wait ** 10 minutes ** before trying this command again.");
+
+            if(GuildMember.build.channels.find("name", "alt-room")) {
+
+                message.author.send(splitted);
+                message.author.send("If you believe your account is not working, send a message to Wrymex.");
+                message.channel.send(message.author + ", you have now received an NFA user! \nWait ** 10 minutes ** before trying this command again.");
+            } else {
+                message.channel.send(message.author + ", you have to use this command in the channel #alt-room");
+            }
             }); 
          break;
-             case "changelog":
+             case "changeloasdasdadsg":
             message.channel.send("| 13.01.2018 | StrayBoots bot founded");
             message.channel.send("| 14.01.2018 | The getalt command got 10 minutes cooldown.");
             break;
-             case "staff":
+             case "staadsasff":
              message.channel.send("Founder | TEST");
              message.channel.send("");
              break;
@@ -93,37 +91,17 @@ bot.on("message", function(message) {
                  }
                  message.author.send(splitted);
                  message.author.send("If you believe your account is not working, send a message to Wrymex.");
-                 message.channel.send(message.author + ", you have now received an Netflix account! \ Wait ** 10 minutes ** before trying this command again.");
+                 message.channel.send(message.author + ", you have now received an Netflix account! \nWait ** 10 minutes ** before trying this command again.");
                  }); 
               break;
               case "removecooldown":
               if (message.author.id == "249838434682667009" || message.author.id == "391300271239593984") {
-
-              if(args.length == 0) {
-                  message.channel.send(message.author + ", please provide a user id!");
-              } else {
                   talkedRecently.delete(args[1]);
                   message.channel.send(message.author + ", that user was now removed from the cooldown!");
-              }
-
               } else {
                   message.channel.send(message.author + ", you do not have permissions to perform this command!");
               }
                break;
-               case "removecd":
-               if (message.author.id == "249838434682667009" || message.author.id == "391300271239593984") {
- 
-               if(args.length == 0) {
-                   message.channel.send(message.author + ", please provide a user id!");
-               } else {
-                   talkedRecently.delete(args[1]);
-                   message.channel.send(message.author + ", that user was now removed from the cooldown!");
-               }
- 
-               } else {
-                   message.channel.send(message.author + ", you do not have permissions to perform this command!");
-               }
-                break;
         default:
             message.channel.send("Unknown command, please use the ?help command.");
             break;
