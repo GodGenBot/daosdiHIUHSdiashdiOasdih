@@ -1,8 +1,8 @@
 import { GuildMember } from "discord.js";
 
-const PREFIX = "?";
+const PREFIX = "!";
 
-const TOKEN = "NDAwMzYzODk3NDM1MTkzMzQ0.DTtTIA.ws-p5bMi6cZLrknParstNtbyXPM";
+const TOKEN = "NDAzMjEzNDU3Njc3MzUyOTc2.DUEBTw.jcnGxnKJIinTNypz-mQi3c0SnMc";
 
 var bot = new Discord.Client();
 
